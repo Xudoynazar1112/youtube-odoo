@@ -1,0 +1,103 @@
+<odoo>
+    <data>
+        <!-- Form view for estate properties -->
+        <record id="view_estate_property_form" model="ir.ui.view">
+            <field name="name">estate.property.form</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <form string="Estate Property">
+                    <header>
+                        <button name="action_sold" type="object" string="Sell"/>
+                        <button name="action_canceled" type="object" string="Cancel"/>
+                    </header>
+                    <sheet>
+                        <div style="font-size: 32px">
+                            <field name="name"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name='tag_ids'/>
+                                <field name='state'/>
+                                <field name="property_type_id"/>
+                                <field name="postcode"/>
+                            </group>
+                            <group>
+                                <field name="date_availability"/>
+                                <field name="expected_price"/>
+                                <field name="best_price"/>
+                                <field name="selling_price"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <group>
+                                    <group>
+                                        <field name="description"/>
+                                        <field name="bedrooms"/>
+                                        <field name="living_area"/>
+                                        <field name="facades"/>
+                                        <field name="garage"/>
+                                        <field name="garden"/>
+                                    </group>
+                                    <group>
+                                        <field name="garden_area"/>
+                                        <field name="garden_orientation"/>
+                                        <field name="active"/>
+                                        <field name="total_area"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Offers">
+                                <field name="offer_ids" widget="one2many_list">
+                                    <tree string="Property Offers">
+                                        <field name="price"/>
+                                        <field name="status"/>
+                                        <field name="validity"/>
+                                        <field name='date_deadline'/>
+                                        <header>
+                                            <button name="action_accept" type="object" string="✅"/>
+                                            <button name="action_refused" type="object" string="❎"/>
+                                        </header>
+                                        <field name="partner_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Other Information">
+                                <group>
+                                    <field name="buyer"/>
+                                    <field name="salesperson"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view for estate properties -->
+        <record id="view_estate_property_tree" model="ir.ui.view">
+            <field name="name">estate.property.tree</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <tree string="Properties">
+                    <field name="name"/>
+                    <field name="tag_ids"/>
+                    <field name="expected_price"/>
+                    <field name="selling_price"/>
+                    <field name="bedrooms"/>
+                    <field name="living_area"/>
+                    <field name="facades"/>
+                    <field name="garage"/>
+                    <field name="garden"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action for estate properties -->
+        <record id="action_estate_property" model="ir.actions.act_window">
+            <field name="name">Estate Properties</field>
+            <field name="res_model">estate.property</field>
+            <field name="view_mode">kanban,graph,list,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+    <menuitem name="My App" id="my_app.menu_root">
+
+        <menuitem name="Custom Models" id="menu_custom_model" action="action_custom_model" sequence="0"/>
+        <menuitem name="My Model's data" id="my_module" action="my_module_action_window"/>
+        <menuitem name="Person" id="my_person" action="action_my_person"/>
+        <menuitem name="Widgets" id="my_widgets" action="action_my_widgets"/>
+
+        <menuitem name="Relations" id="menu_relations" sequence="1">
+            <!-- Menu Items -->
+            <menuitem name="Many2one" id="menu_library" sequence="1">
+                <!-- Many2one Models -->
+                <menuitem name="Categories" id="menu_library_category" action="action_library_category"/>
+                <menuitem name="Books" id="menu_library_book" action="action_library_book"/>
+            </menuitem>
+            <menuitem name="One2many" id="menu_shop" sequence="2">
+                <!-- One2many Models -->
+                <menuitem name="Customers" id="menu_shop_customer" action="action_shop_customer"/>
+                <menuitem name="Orders" id="menu_shop_order" action="action_shop_order"/>
+            </menuitem>
+            <menuitem name="Many2many" id="menu_academy" sequence="3">
+                <!-- Many2many Models -->
+                <menuitem name="Courses" id="menu_academy_course" action="action_academy_course"/>
+                <menuitem name="Students" id="menu_academy_student" action="action_academy_student"/>
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>

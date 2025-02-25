@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_my_widgets_tree" model="ir.ui.view">
+        <field name="name">my.widgets.tree</field>
+        <field name="model">my_widgets</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name" widget="badge"/>
+                <field name="url"/>
+                <field name="email"/>
+                <field name="sold_count" widget="progressbar"/>
+                <field name="phone"/>
+                <field name="price"/>
+                <field name="discount"/>
+                <field name="state"/>
+                <field name="status"/>
+                <field name="author_id"/>
+                <field name="published"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_my_widgets_form" model="ir.ui.view">
+        <field name="name">my.widgets.form</field>
+        <field name="model">my_widgets</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" widget="text"/>
+                        <field name="url" widget="CopyClipboardChar"/>
+                        <field name="text"/>
+                        <field name="email" widget="email"/>
+                        <field name="phone" widget="phone"/>
+                        <field name="filter_domain" widget="domain" options="{'model': 'my_widgets'}"/>
+                        <field name="count"/>
+                        <field name="color" widget="color_picker"/>
+                        <field name="sold_count"/>
+                    </group>
+                    <group>
+                        <field name="price"/>
+                        <field name="discount"/>
+                        <field name="time" widget="float_time"/>
+                        <field name="date"/>
+                        <field name="date_begin"/>
+                        <field name="date_end"/>
+                        <field name="priority"/>
+                        <field name="state"/>
+                        <field name="status" widget="radio"/>
+                    </group>
+                    <group>
+                        <field name="file" widget="pdf_viewer"/>
+                        <field name="author_id"/>
+                        <field name="tag_ids" widget="many2many_checkboxes"/>
+                        <field name="published" widget="boolean_toggle"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_my_widgets" model="ir.actions.act_window">
+        <field name="name">My Widgets</field>
+        <field name="res_model">my_widgets</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help">Manage your widgets efficiently.</field>
+    </record>
+</odoo>

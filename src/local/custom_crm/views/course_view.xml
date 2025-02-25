@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_mycourse" model="ir.actions.act_window">
+        <field name="name">My Courses</field>
+        <field name="res_model">crm.mycourse</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_mystudent" model="ir.actions.act_window">
+        <field name="name">My Students</field>
+        <field name="res_model">crm.student</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_myteacher" model="ir.actions.act_window">
+        <field name="name">My Teachers</field>
+        <field name="res_model">crm.teacher</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

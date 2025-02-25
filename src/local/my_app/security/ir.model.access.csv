@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+my_app.access_my_model,access_my_model,my_app.model_my_model,base.group_user,1,1,1,1
+my_app.access_my_person,access_my_person,my_app.model_my_person,base.group_user,1,1,1,1
+my_app.access_library_category,access_library_category,my_app.model_library_category,base.group_user,1,1,1,1
+my_app.access_library_book,access_library_book,my_app.model_library_book,base.group_user,1,1,1,1
+my_app.access_shop_order,access_shop_order,my_app.model_shop_order,base.group_user,1,1,1,1
+my_app.access_shop_customer,access_shop_customer,my_app.model_shop_customer,base.group_user,1,1,1,1
+my_app.access_academy_course,access_academy_course,my_app.model_academy_course,base.group_user,1,1,1,1
+my_app.access_academy_student,access_academy_student,my_app.model_academy_student,base.group_user,1,1,1,1
+my_app.access_my_widgets,access_my_widgets,my_app.model_my_widgets,base.group_user,1,1,1,1
+my_app.access_custom_model,access_custom_model,my_app.model_custom_model,base.group_user,1,1,1,1
+my_app.access_custom_tag,access_custom_tag,my_app.model_custom_tag,base.group_user,1,1,1,1

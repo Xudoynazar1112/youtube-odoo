@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="custom_crm.menu_root" name="Custom CRM" sequence="0">
+        <menuitem id="menu_crm_mycourse" name="My Courses" action="action_mycourse" sequence="0"/>
+        <menuitem id="menu_crm_mystudent" name="My Students" action="action_mystudent" sequence="1"/>
+        <menuitem id="menu_crm_myteacher" name="My Teachers" action="action_myteacher" sequence="2"/>
+    </menuitem>
+</odoo>

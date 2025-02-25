@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+custom_crm.access_crm_mycourse,access_crm_mycourse,custom_crm.model_crm_mycourse,,1,1,1,1
+custom_crm.access_crm_student,access_crm_student,custom_crm.model_crm_student,,1,1,1,1
+custom_crm.access_crm_teacher,access_crm_teacher,custom_crm.model_crm_teacher,,1,1,1,1

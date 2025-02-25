@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Actions -->
+    <!-- Library Category -->
+    <record id="action_library_category" model="ir.actions.act_window">
+        <field name="name">Categories</field>
+        <field name="res_model">library.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Library Book -->
+    <record id="action_library_book" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Shop Customer -->
+    <record id="action_shop_customer" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="res_model">shop.customer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Shop Order -->
+    <record id="action_shop_order" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="res_model">shop.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Academy Course -->
+    <record id="action_academy_course" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="res_model">academy.course</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Academy Student -->
+    <record id="action_academy_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">academy.student</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Tree and Form Views -->
+    <!-- Library Category -->
+    <record id="view_tree_library_category" model="ir.ui.view">
+        <field name="name">library.category.tree</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_form_library_category" model="ir.ui.view">
+        <field name="name">library.category.form</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Library Book -->
+    <record id="view_tree_library_book" model="ir.ui.view">
+        <field name="name">library.book.tree</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="category_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_form_library_book" model="ir.ui.view">
+        <field name="name">library.book.form</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="category_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Shop Customer -->
+    <record id="view_tree_shop_customer" model="ir.ui.view">
+        <field name="name">shop.customer.tree</field>
+        <field name="model">shop.customer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_form_shop_customer" model="ir.ui.view">
+        <field name="name">shop.customer.form</field>
+        <field name="model">shop.customer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="order_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="order_date"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="order_date"/>
+                                </group>
+                            </form>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Shop Order -->
+    <record id="view_tree_shop_order" model="ir.ui.view">
+        <field name="name">shop.order.tree</field>
+        <field name="model">shop.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="order_date"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_form_shop_order" model="ir.ui.view">
+        <field name="name">shop.order.form</field>
+        <field name="model">shop.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="customer_id"/>
+                        <field name="order_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Academy Course -->
+    <record id="view_tree_academy_course" model="ir.ui.view">
+        <field name="name">academy.course.tree</field>
+        <field name="model">academy.course</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_form_academy_course" model="ir.ui.view">
+        <field name="name">academy.course.form</field>
+        <field name="model">academy.course</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="student_ids">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Academy Student -->
+    <record id="view_tree_academy_student" model="ir.ui.view">
+        <field name="name">academy.student.tree</field>
+        <field name="model">academy.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="age"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_form_academy_student" model="ir.ui.view">
+        <field name="name">academy.student.form</field>
+        <field name="model">academy.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="course_ids">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

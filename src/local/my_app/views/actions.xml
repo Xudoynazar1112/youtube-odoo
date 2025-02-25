@@ -1,0 +1,19 @@
+<odoo>
+    <record id="action_custom_model" model="ir.actions.act_window">
+        <field name="name">Custom Models</field>
+        <field name="res_model">custom.model</field>
+        <field name="view_mode">graph,kanban,calendar,activity,tree,form</field>
+    </record>
+
+   <record id="action_library_category" model="ir.actions.act_window">
+       <field name="name">Categories</field>
+       <field name="res_model">library.category</field>
+       <field name="view_mode">tree,form</field>
+   </record>
+
+   <record id="action_library_book" model="ir.actions.act_window">
+       <field name="name">Books</field>
+       <field name="res_model">library.book</field>
+       <field name="view_mode">tree,form</field>
+   </record>
+</odoo>
